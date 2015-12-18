@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Наименование" id="1">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НаименованиеExtendedTooltip" id="22"/>
+			<Events>
+				<Event name="OnChange">НаименованиеПриИзменении</Event>
+				<Event name="AutoComplete">НаименованиеАвтоПодбор</Event>
+			</Events>
+		</InputField>
+		<InputField name="Родитель" id="3">
+			<DataPath>Объект.Parent</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="РодительКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="РодительExtendedTooltip" id="23"/>
+		</InputField>
+		<InputField name="СсылкаНаЗадачу" id="7">
+			<DataPath>Объект.СсылкаНаЗадачу</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СсылкаНаЗадачуКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СсылкаНаЗадачуExtendedTooltip" id="24"/>
+		</InputField>
+		<UsualGroup name="Группа1" id="11">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1ExtendedTooltip" id="25"/>
+			<ChildItems>
+				<InputField name="Порядок" id="5">
+					<DataPath>Объект.Порядок</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПорядокКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ПорядокExtendedTooltip" id="26"/>
+				</InputField>
+				<InputField name="ПланируемыйСрок" id="9">
+					<DataPath>Объект.ПланируемыйСрок</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПланируемыйСрокКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ПланируемыйСрокExtendedTooltip" id="27"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ИсторияСобытий" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>История событий</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>История событий</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ИсторияСобытийExtendedTooltip" id="28"/>
+			<ChildItems>
+				<LabelDecoration name="СсылкаДобавитьКомментарий" id="13">
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Оставить комментарий</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="СсылкаДобавитьКомментарийКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="СсылкаДобавитьКомментарийExtendedTooltip" id="29"/>
+					<Events>
+						<Event name="Click">СсылкаДобавитьКомментарийНажатие</Event>
+					</Events>
+				</LabelDecoration>
+				<UsualGroup name="ПанельДобавленияКомментария" id="15">
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Панель добавления комментария</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Панель добавления комментария</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПанельДобавленияКомментарияExtendedTooltip" id="30"/>
+					<ChildItems>
+						<InputField name="ПолеКомментария" id="16">
+							<DataPath>ПолеКомментария</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Введите в это поле комментарий к изменению статуса</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>50</Width>
+							<Height>4</Height>
+							<VerticalStretch>false</VerticalStretch>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="ПолеКомментарияКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="ПолеКомментарияExtendedTooltip" id="31"/>
+							<Events>
+								<Event name="OnChange">ПолеКомментарияПриИзменении</Event>
+								<Event name="AutoComplete">ПолеКомментарияАвтоПодбор</Event>
+							</Events>
+						</InputField>
+						<CommandBar name="Группа8" id="18">
+							<Width>3</Width>
+							<Height>4</Height>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ExtendedTooltip name="Группа8ExtendedTooltip" id="32"/>
+							<ChildItems>
+								<Button name="ДобавитьКомментарий" id="19">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ДобавитьКомментарий</CommandName>
+									<Parameter xsi:nil="true"/>
+									<ExtendedTooltip name="ДобавитьКомментарийExtendedTooltip" id="33"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+					</ChildItems>
+				</UsualGroup>
+				<HTMLDocumentField name="ПолеИстории" id="20">
+					<DataPath>ПолеИстории</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="ПолеИсторииКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ПолеИсторииExtendedTooltip" id="34"/>
+				</HTMLDocumentField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ПланРазвития</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПолеИстории" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поле истории</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолеКомментария" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поле комментария</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ДобавитьКомментарий" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить комментарий</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СделатьКомментарий</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьКомментарий</Action>
+		</Command>
+		<Command name="ПоказатьКомментарии" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать комментарии</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать комментарии</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ПоказатьКомментарии</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ПоказатьКомментарии</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Основание">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Дело</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

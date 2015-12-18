@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ЭлементыУправленияДиаграммойГанта" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Элементы управления диаграммой ганта</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Элементы управления диаграммой ганта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ЭлементыУправленияДиаграммойГантаExtendedTooltip" id="29"/>
+			<ChildItems>
+				<UsualGroup name="Группа1" id="8">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1ExtendedTooltip" id="30"/>
+					<ChildItems>
+						<InputField name="ДатаНачала" id="9">
+							<DataPath>ДатаНачала</DataPath>
+							<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="10"/>
+							<ExtendedTooltip name="ДатаНачалаExtendedTooltip" id="31"/>
+						</InputField>
+						<InputField name="ДатаКонца" id="11">
+							<DataPath>ДатаКонца</DataPath>
+							<ContextMenu name="ДатаКонцаКонтекстноеМеню" id="12"/>
+							<ExtendedTooltip name="ДатаКонцаExtendedTooltip" id="32"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<CommandBar name="Группа4" id="2">
+					<ExtendedTooltip name="Группа4ExtendedTooltip" id="33"/>
+					<ChildItems>
+						<Button name="Сформировать" id="13">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.Сформировать</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="СформироватьExtendedTooltip" id="34"/>
+						</Button>
+						<Button name="Период" id="3">
+							<Type>CommandBarButton</Type>
+							<SkipOnInput>false</SkipOnInput>
+							<CommandName>Form.Command.Период</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="ПериодExtendedTooltip" id="35"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+				<TrackBarField name="МасштабДиаграммыГанта" id="4">
+					<DataPath>МасштабДиаграммыГанта</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Width>16</Width>
+					<Height>1</Height>
+					<MinValue>1</MinValue>
+					<MaxValue>30</MaxValue>
+					<LargeStep>5</LargeStep>
+					<MarkingAppearance>BothSides</MarkingAppearance>
+					<ContextMenu name="МасштабДиаграммыГантаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="МасштабДиаграммыГантаExtendedTooltip" id="36"/>
+					<Events>
+						<Event name="OnChange">МасштабДиаграммыГантаПриИзменении</Event>
+					</Events>
+				</TrackBarField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Группа2" id="14">
+			<ExtendedTooltip name="Группа2ExtendedTooltip" id="37"/>
+			<ChildItems>
+				<Page name="Группа3" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Диаграмма</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа3ExtendedTooltip" id="38"/>
+					<ChildItems>
+						<GanttChartField name="ДиграммаГанта" id="6">
+							<DataPath>ДиграммаГанта</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Height>12</Height>
+							<ContextMenu name="ДиграммаГантаКонтекстноеМеню" id="7"/>
+							<ExtendedTooltip name="ДиграммаГантаExtendedTooltip" id="39"/>
+						</GanttChartField>
+					</ChildItems>
+				</Page>
+				<Page name="Группа5" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа5ExtendedTooltip" id="40"/>
+					<ChildItems>
+						<Table name="ДеревоЗадач" id="17">
+							<Representation>Tree</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ДеревоЗадач</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройка</v8:content>
+								</v8:item>
+							</Title>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ContextMenu name="ДеревоЗадачКонтекстноеМеню" id="18"/>
+							<AutoCommandBar name="ДеревоЗадачКоманднаяПанель" id="19">
+								<ChildItems>
+									<Button name="ДеревоЗадачЗаполнить" id="28">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Заполнить</CommandName>
+										<Parameter xsi:nil="true"/>
+										<ExtendedTooltip name="ДеревоЗадачЗаполнитьExtendedTooltip" id="41"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ДеревоЗадачExtendedTooltip" id="42"/>
+							<SearchStringAddition name="ДеревоЗадачSearchString" id="43">
+								<Source>
+									<lf:elementId>17</lf:elementId>
+									<lf:additionId>0</lf:additionId>
+								</Source>
+								<ContextMenu name="ДеревоЗадачSearchStringContextMenu" id="44"/>
+								<ExtendedTooltip name="ДеревоЗадачSearchStringExtendedTooltip" id="45"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДеревоЗадачViewStatus" id="46">
+								<Source>
+									<lf:elementId>17</lf:elementId>
+									<lf:additionId>1</lf:additionId>
+								</Source>
+								<ContextMenu name="ДеревоЗадачViewStatusContextMenu" id="47"/>
+								<ExtendedTooltip name="ДеревоЗадачViewStatusExtendedTooltip" id="48"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДеревоЗадачSearchControl" id="49">
+								<Source>
+									<lf:elementId>17</lf:elementId>
+									<lf:additionId>2</lf:additionId>
+								</Source>
+								<ContextMenu name="ДеревоЗадачSearchControlContextMenu" id="50"/>
+								<ExtendedTooltip name="ДеревоЗадачSearchControlExtendedTooltip" id="51"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ДеревоЗадачЗадача" id="20">
+									<DataPath>ДеревоЗадач.Задача</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДеревоЗадачЗадачаКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="ДеревоЗадачЗадачаExtendedTooltip" id="52"/>
+								</InputField>
+								<InputField name="ДеревоЗадачДатаНачала" id="22">
+									<DataPath>ДеревоЗадач.ДатаНачала</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДеревоЗадачДатаНачалаКонтекстноеМеню" id="23"/>
+									<ExtendedTooltip name="ДеревоЗадачДатаНачалаExtendedTooltip" id="53"/>
+								</InputField>
+								<InputField name="ДеревоЗадачДатаЗавершения" id="24">
+									<DataPath>ДеревоЗадач.ДатаЗавершения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДеревоЗадачДатаЗавершенияКонтекстноеМеню" id="25"/>
+									<ExtendedTooltip name="ДеревоЗадачДатаЗавершенияExtendedTooltip" id="54"/>
+								</InputField>
+								<InputField name="ДеревоЗадачПроект" id="26">
+									<DataPath>ДеревоЗадач.Проект</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДеревоЗадачПроектКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="ДеревоЗадачПроектExtendedTooltip" id="55"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="МасштабДиаграммыГанта" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Масштаб диаграммы ганта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<View>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</View>
+			<Edit>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+		</Attribute>
+		<Attribute name="ДиграммаГанта" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Диграмма ганта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.2/data/chart">d5p1:GanttChart</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаНачала" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>С</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаКонца" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>по</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДеревоЗадач" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево задач</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Задача" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Название</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>256</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаНачала" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начало</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаЗавершения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Окончание</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Проект" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ГруппаДел</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Период" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Период</Action>
+		</Command>
+		<Command name="Сформировать" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Сформировать</Action>
+		</Command>
+		<Command name="Заполнить" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Заполнить</Action>
+		</Command>
+	</Commands>
+</Form>

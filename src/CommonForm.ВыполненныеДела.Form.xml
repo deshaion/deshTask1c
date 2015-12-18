@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="12">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1ExtendedTooltip" id="31"/>
+			<ChildItems>
+				<LabelField name="НадписьДата" id="10">
+					<DataPath>НадписьДата</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДЛФ=DD</v8:content>
+						</v8:item>
+					</Format>
+					<Font ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<ContextMenu name="НадписьДатаКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="НадписьДатаExtendedTooltip" id="32"/>
+				</LabelField>
+				<CommandBar name="Группа2" id="15">
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<HorizontalLocation>Right</HorizontalLocation>
+					<ExtendedTooltip name="Группа2ExtendedTooltip" id="33"/>
+					<ChildItems>
+						<Button name="Вчера" id="13">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.Вчера</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="ВчераExtendedTooltip" id="34"/>
+						</Button>
+						<Button name="Сегодня" id="14">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.Сегодня</CommandName>
+							<Parameter xsi:nil="true"/>
+							<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+							<ExtendedTooltip name="СегодняExtendedTooltip" id="35"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+				<InputField name="ДатаВыполнения" id="18">
+					<DataPath>ДатаВыполнения</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<HorizontalStretch>false</HorizontalStretch>
+					<SpinButton>true</SpinButton>
+					<ContextMenu name="ДатаВыполненияКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="ДатаВыполненияExtendedTooltip" id="36"/>
+					<Events>
+						<Event name="OnChange">ДатаВыполненияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<CommandBar name="ИзбранныеКнопки" id="23">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Избранные кнопки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Избранные кнопки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalLocation>Right</HorizontalLocation>
+					<ExtendedTooltip name="ИзбранныеКнопкиExtendedTooltip" id="37"/>
+				</CommandBar>
+				<UsualGroup name="Группа3" id="29">
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа3ExtendedTooltip" id="38"/>
+					<ChildItems>
+						<Button name="СобытияДня" id="30">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.СобытияДня</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="СобытияДняExtendedTooltip" id="39"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<Button name="Справка" id="20">
+					<Type>UsualButton</Type>
+					<Representation>Picture</Representation>
+					<CommandName>Form.StandardCommand.Help</CommandName>
+					<Parameter xsi:nil="true"/>
+					<ExtendedTooltip name="СправкаExtendedTooltip" id="40"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаУправления" id="24">
+			<UserVisible>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.Разработчик">false</xr:Value>
+				<xr:Value name="Role.Наблюдатель">false</xr:Value>
+				<xr:Value name="Role.ОпытныйРазработчик">false</xr:Value>
+				<xr:Value name="Role.РаботаСРазвитием">false</xr:Value>
+			</UserVisible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа управления</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа управления</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаУправленияExtendedTooltip" id="41"/>
+			<ChildItems>
+				<InputField name="текСотрудник" id="25">
+					<DataPath>текСотрудник</DataPath>
+					<ContextMenu name="текСотрудникКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="текСотрудникExtendedTooltip" id="42"/>
+					<Events>
+						<Event name="OnChange">текСотрудникПриИзменении</Event>
+					</Events>
+				</InputField>
+				<Button name="КомандаОбновить" id="27">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.КомандаОбновить</CommandName>
+					<Parameter xsi:nil="true"/>
+					<ExtendedTooltip name="КомандаОбновитьExtendedTooltip" id="43"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ТаблицаВремени" id="1">
+			<Representation>List</Representation>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>ТаблицаВремени</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаВремениКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ТаблицаВремениКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТаблицаВремениExtendedTooltip" id="44"/>
+			<SearchStringAddition name="ТаблицаВремениSearchString" id="45">
+				<Source>
+					<lf:elementId>1</lf:elementId>
+					<lf:additionId>0</lf:additionId>
+				</Source>
+				<ContextMenu name="ТаблицаВремениSearchStringContextMenu" id="46"/>
+				<ExtendedTooltip name="ТаблицаВремениSearchStringExtendedTooltip" id="47"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаВремениViewStatus" id="48">
+				<Source>
+					<lf:elementId>1</lf:elementId>
+					<lf:additionId>1</lf:additionId>
+				</Source>
+				<ContextMenu name="ТаблицаВремениViewStatusContextMenu" id="49"/>
+				<ExtendedTooltip name="ТаблицаВремениViewStatusExtendedTooltip" id="50"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаВремениSearchControl" id="51">
+				<Source>
+					<lf:elementId>1</lf:elementId>
+					<lf:additionId>2</lf:additionId>
+				</Source>
+				<ContextMenu name="ТаблицаВремениSearchControlContextMenu" id="52"/>
+				<ExtendedTooltip name="ТаблицаВремениSearchControlExtendedTooltip" id="53"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnEditEnd">ТаблицаВремениПриОкончанииРедактирования</Event>
+				<Event name="DragCheck">ТаблицаВремениПроверкаПеретаскивания</Event>
+				<Event name="Drag">ТаблицаВремениПеретаскивание</Event>
+				<Event name="AfterDeleteRow">ТаблицаВремениПослеУдаления</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="ТаблицаВремениДело" id="4">
+					<DataPath>ТаблицаВремени.Дело</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТаблицаВремениДелоКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ТаблицаВремениДелоExtendedTooltip" id="54"/>
+					<Events>
+						<Event name="OnChange">ТаблицаВремениДелоПриИзменении</Event>
+						<Event name="AutoComplete">ТаблицаВремениДелоАвтоПодбор</Event>
+						<Event name="TextEditEnd">ТаблицаВремениДелоОкончаниеВводаТекста</Event>
+						<Event name="ChoiceProcessing">ТаблицаВремениДелоОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТаблицаВремениКомментарий" id="16">
+					<DataPath>ТаблицаВремени.Комментарий</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>2</Width>
+					<ContextMenu name="ТаблицаВремениКомментарийКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ТаблицаВремениКомментарийExtendedTooltip" id="55"/>
+				</InputField>
+				<InputField name="ТаблицаВремениПроект" id="21">
+					<DataPath>ТаблицаВремени.Проект</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>1</Width>
+					<ContextMenu name="ТаблицаВремениПроектКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="ТаблицаВремениПроектExtendedTooltip" id="56"/>
+					<Events>
+						<Event name="OnChange">ТаблицаВремениПроектПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТаблицаВремениСтарт" id="6">
+					<DataPath>ТаблицаВремени.Старт</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>1</Width>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=HH:mm</v8:content>
+						</v8:item>
+					</Format>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=HH:mm</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="ТаблицаВремениСтартКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="ТаблицаВремениСтартExtendedTooltip" id="57"/>
+					<Events>
+						<Event name="OnChange">ТаблицаВремениСтартПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТаблицаВремениКонец" id="8">
+					<DataPath>ТаблицаВремени.Завершение</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>1</Width>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=HH:mm</v8:content>
+						</v8:item>
+					</Format>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=HH:mm</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="ТаблицаВремениКонецКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ТаблицаВремениКонецExtendedTooltip" id="58"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТаблицаВремени" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица времени</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Дело" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дело</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Task</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Дело</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Старт" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Старт</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Start</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Завершение" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Конец</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>End</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Комментарий" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Comment</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>1000</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Проект" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проект</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Project</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ГруппаДел</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="НадписьДата" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Надпись дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаВыполнения" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата выполнения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="фПереключатьсяНаТекущийДеньПриПеретаскивании" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переключаться на текущий день при перетаскивании</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="текСотрудник" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Employeer</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Сотрудники</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ТаблицаВремениПроект</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ТаблицаВремени.Проект</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.ГруппаДел.ПустаяСсылка</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ReadOnly</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Вчера" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вчера</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Yesterday</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вчера</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Вчера</Action>
+		</Command>
+		<Command name="Сегодня" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сегодня</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Today</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сегодня</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Сегодня</Action>
+		</Command>
+		<Command name="КомандаКнопки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда кнопки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда кнопки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаКнопки</Action>
+		</Command>
+		<Command name="КомандаОбновить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОбновить</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="СобытияДня" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>События дня</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Events of day</v8:content>
+				</v8:item>
+			</Title>
+			<Action>СобытияДня</Action>
+		</Command>
+	</Commands>
+</Form>

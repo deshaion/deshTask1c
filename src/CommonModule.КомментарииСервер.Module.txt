@@ -1,0 +1,142 @@
+﻿
+Процедура ЗаписатьВРегистрСтатусПоручения(пДело, пКомментарий) Экспорт 
+	параметры = Новый Структура();
+	параметры.Вставить("Дело", пДело);
+	параметры.Вставить("Комментарий", пКомментарий);
+	параметры.Вставить("Автор", ПараметрыСеанса.ТекущийСотрудник);
+	//itland.avdonin {{09.12.2012#
+	// МАНТИС
+	//лКодМантис = Мантис.ЗаписатьКоммент(параметры);
+	лКодМантис = "";
+	//
+	
+	КомментыДел = РегистрыСведений.КомментыДел.СоздатьНаборЗаписей();
+	КомментыДел.Отбор.Дело.Установить(пДело);
+	КомментыДел.Прочитать();
+	новСтрока = КомментыДел.Добавить();
+	новСтрока.Период 		= ТекущаяДата();
+	новСтрока.Дело 			= пДело;
+	новСтрока.Автор 		= параметры.Автор;
+	новСтрока.Комментарий 	= пКомментарий;
+	новСтрока.КодМантиса 	= лКодМантис;
+	
+	КомментыДел.Записать();
+КонецПроцедуры // ЗаписатьВРегистрСтатусПоручения()
+
+Функция ПолучитьОписание(пДело) Экспорт 
+	Запрос = Новый Запрос;
+	Запрос.Текст = "
+	|ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	|	КомментыДел.Период КАК Период,
+	|	КомментыДел.Автор,
+	|	КомментыДел.Комментарий,
+	|	КомментыДел.Дело
+	|ИЗ
+	|	РегистрСведений.КомментыДел КАК КомментыДел
+	|ГДЕ
+	|	Дело = &Дело
+	|УПОРЯДОЧИТЬ ПО
+	|	Период";
+	
+	Запрос.УстановитьПараметр("Дело", пДело);
+	
+	ИсторияКомментариев = Запрос.Выполнить().Выгрузить();
+	
+	ТекстHTML = "
+	|<HTML xmlns=""http://www.w3.org/1999/xhtml""><HEAD>
+	|<META http-equiv=Content-Type content=""text/html; charset=utf-8"">
+	|<META content=""MSHTML 6.00.2900.5726"" name=GENERATOR></HEAD>
+	|<style type=""text/css"">
+	|	body{margin: 0;font-family: ""Microsoft Sans Serif"";color: Black;font-size: 10pt;}
+	|	a {text-decoration: none; color: #FF8C00;}
+	|	a:hover {text-decoration: underline; color: Red;}
+	|	.message img{vertical-align: middle;}
+	|	.colcont{width: 100%; padding-top: 4px; padding-bottom: 5px;}
+	|	.start{border-bottom: 1px solid #D3D3D3;}
+	|	.colboxleft{
+	|		float: left;
+	|		margin-right: 0px;
+	|		margin-left: 5px;
+	|		width: 32px;
+	|		height:auto;
+	|		text-align:left;
+	|		vertical-align: middle;
+	|	}
+	|	.colboxmiddle {
+	|		border-bottom: 1px dashed #D3D3D3;
+	|		text-align: left;
+	|		font-weight: bold;
+	|		vertical-align: center;
+	|		margin-left: 10px;
+	|		margin-right: 6px;
+	|		margin-bottom: 8px;
+	|		}
+	|	.colboxmiddlemess {
+	|		text-align: left;
+	|		vertical-align: middle;
+	|		margin-left: 10px;
+	|		margin-right: 6px;
+	|		width: 85%;
+	|		}
+	|	.colboxright {color: #999999;
+	|		float: right;
+	|		text-align: right;
+	|		padding-left: 6px;
+	|		margin-right: 6px;
+	|		font-size: 10px
+	|		}
+	|	.message{vertical-align: bottom; word-wrap: break-word; font-weight: normal; color: #000000;}
+	|	.nick{font-size: 12px; font-weight: bold;}	
+	|	.clear{clear:both}
+	|</style>
+	|<style media=""screen"" type=""text/css"">
+	|	.new{color: #999999} /* Выдано*/
+	|	.inwork{color: #F4BD00} /* Выполняется*/
+	|	.refused{color: #fe50a7} /* Отменено*/
+	|	.closed{color: #00CC00} /* Закрыто*/
+	|	.default{color: #009BD4} /* синий - по умолчанию*/
+	|</style>
+	|</HEAD>
+	|<BODY>
+	|";
+	
+	ШаблонСообщения = "
+	|<div class=""colcont start"">
+	|	<span class=""colboxright"">Период</span>
+	|	<div class=""colboxmiddle"">
+	|	   	<span class=""nick incolor"">Автор написал</span></div>
+	|		<div class=""colboxmiddlemess"">
+	|		<span class=""message"">Сообщение</span>
+	|	</div>
+	|  	<span class=""clear""></span>
+	|</div>
+	|";
+	
+	// имеет смысл по разному разрисовывать контроллера и исполнителя
+	// регулируется incolor, outcolor и так далее
+	
+	//цветаСтатуса = Новый Соответствие;
+	//цветаСтатуса.Вставить(Перечисления.упоПорученияСтатусы.Выдано		, "new");
+	//цветаСтатуса.Вставить(Перечисления.упоПорученияСтатусы.Выполняется	, "inwork");
+	//цветаСтатуса.Вставить(Перечисления.упоПорученияСтатусы.Отменено		, "refused");
+	//цветаСтатуса.Вставить(Перечисления.упоПорученияСтатусы.Закрыто		, "closed");
+	
+	Для каждого коммент Из ИсторияКомментариев Цикл
+		комментHTML = СтрЗаменить(ШаблонСообщения, "Период", Формат(коммент.Период, "ДЛФ=DDT"));
+		комментHTML = СтрЗаменить(комментHTML, "Автор", коммент.Автор);
+		комментHTML = СтрЗаменить(комментHTML, "Сообщение", коммент.Комментарий);
+		
+		//Если ЗначениеЗаполнено(коммент.Статус) Тогда
+		//	названиеЦвета = цветаСтатуса[коммент.Статус];
+		//Иначе
+			названиеЦвета = "default";
+		//КонецЕсли;
+		
+		комментHTML = СтрЗаменить(комментHTML, "incolor", названиеЦвета);
+		ТекстHTML = ТекстHTML + комментHTML;
+	КонецЦикла;
+		
+    Возврат ТекстHTML + "</body></html>";
+
+КонецФункции // ОбновитьОписание()
+

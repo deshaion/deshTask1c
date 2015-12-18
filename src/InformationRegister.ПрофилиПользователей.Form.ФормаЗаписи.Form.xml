@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Сотрудник" id="7">
+			<DataPath>Запись.Сотрудник</DataPath>
+			<UserVisible>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.Разработчик">false</xr:Value>
+				<xr:Value name="Role.Наблюдатель">false</xr:Value>
+				<xr:Value name="Role.ОпытныйРазработчик">false</xr:Value>
+				<xr:Value name="Role.РаботаСРазвитием">false</xr:Value>
+			</UserVisible>
+			<ContextMenu name="СотрудникКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СотрудникExtendedTooltip" id="19"/>
+			<Events>
+				<Event name="OnChange">СотрудникПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаРассылки" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки рассылки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа рассылки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаРассылкиExtendedTooltip" id="20"/>
+			<ChildItems>
+				<InputField name="Емайл" id="1">
+					<DataPath>Запись.Емайл</DataPath>
+					<ContextMenu name="ЕмайлКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ЕмайлExtendedTooltip" id="21"/>
+				</InputField>
+				<CheckBoxField name="ОтправлятьПлан" id="3">
+					<DataPath>Запись.ОтправлятьПлан</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОтправлятьПланКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ОтправлятьПланExtendedTooltip" id="22"/>
+				</CheckBoxField>
+				<CheckBoxField name="ОтправлятьФакт" id="5">
+					<DataPath>Запись.ОтправлятьФакт</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОтправлятьФактКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ОтправлятьФактExtendedTooltip" id="23"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаВыполненныеДела" id="12">
+			<UserVisible>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.Наблюдатель">false</xr:Value>
+			</UserVisible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки формы "Выполненные дела"</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа выполненные дела</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаВыполненныеДелаExtendedTooltip" id="24"/>
+			<ChildItems>
+				<CheckBoxField name="ВыполненныеДела_ПереключатьсяНаТекущийДень" id="9">
+					<DataPath>Запись.ВыполненныеДела_ПереключатьсяНаТекущийДень</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВыполненныеДела_ПереключатьсяНаТекущийДеньКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ВыполненныеДела_ПереключатьсяНаТекущийДеньExtendedTooltip" id="25"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПланЗадач" id="13">
+			<UserVisible>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.Наблюдатель">false</xr:Value>
+			</UserVisible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки формы "План задач"</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа план задач</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаПланЗадачExtendedTooltip" id="26"/>
+			<ChildItems>
+				<CheckBoxField name="ПланЗадач_СтраницаЧекЛистПоУмолчанию" id="14">
+					<DataPath>Запись.ПланЗадач_СтраницаЧекЛистПоУмолчанию</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПланЗадач_СтраницаЧекЛистПоУмолчаниюКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ПланЗадач_СтраницаЧекЛистПоУмолчаниюExtendedTooltip" id="27"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаЧекЛист" id="16">
+			<UserVisible>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.Наблюдатель">false</xr:Value>
+			</UserVisible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки чек-листа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа чек лист</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаЧекЛистExtendedTooltip" id="28"/>
+			<ChildItems>
+				<CheckBoxField name="ЧекЛист_АвтоКонтрольЧекЛистаПриДобавленииПункта" id="17">
+					<DataPath>Запись.ЧекЛист_АвтоКонтрольЧекЛистаПриДобавленииПункта</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЧекЛист_АвтоКонтрольЧекЛистаПриДобавленииПунктаКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ЧекЛист_АвтоКонтрольЧекЛистаПриДобавленииПунктаExtendedTooltip" id="29"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.ПрофилиПользователей</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

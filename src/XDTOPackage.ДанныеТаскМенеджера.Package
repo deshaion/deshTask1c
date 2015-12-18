@@ -1,0 +1,446 @@
+﻿<package xmlns="http://v8.1c.ru/8.1/xdto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://v8.1c.ru/8.1/data/enterprise/current-config">
+	<import namespace="http://v8.1c.ru/8.1/data/core"/>
+	<import namespace="http://v8.1c.ru/8.1/data/enterprise"/>
+	<valueType xmlns:d2p1="http://v8.1c.ru/8.1/data/enterprise" name="CatalogRef.ГруппаДел" base="d2p1:AnyRef" variety="Atomic"/>
+	<valueType xmlns:d2p1="http://v8.1c.ru/8.1/data/enterprise" name="CatalogRef.Дело" base="d2p1:AnyRef" variety="Atomic"/>
+	<valueType xmlns:d2p1="http://v8.1c.ru/8.1/data/enterprise" name="CatalogRef.ПланРазвития" base="d2p1:AnyRef" variety="Atomic"/>
+	<valueType xmlns:d2p1="http://v8.1c.ru/8.1/data/enterprise" name="CatalogRef.ПунктЧекЛиста" base="d2p1:AnyRef" variety="Atomic"/>
+	<valueType xmlns:d2p1="http://v8.1c.ru/8.1/data/enterprise" name="CatalogRef.Сотрудники" base="d2p1:AnyRef" variety="Atomic"/>
+	<valueType xmlns:d2p1="http://v8.1c.ru/8.1/data/enterprise" name="CatalogRef.УчетныеЗаписиЭлектроннойПочты" base="d2p1:AnyRef" variety="Atomic"/>
+	<valueType xmlns:d2p1="http://v8.1c.ru/8.1/data/enterprise" name="CatalogRef.ШаблоныЧекЛистов" base="d2p1:AnyRef" variety="Atomic"/>
+	<valueType xmlns:d2p1="http://v8.1c.ru/8.1/data/enterprise" name="DocumentRef.Письмо" base="d2p1:AnyRef" variety="Atomic"/>
+	<valueType name="EnumRef.ВариантыSMTPАутентификации" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>АналогичноPOP3</enumeration>
+		<enumeration>ЗадаетсяПараметрами</enumeration>
+		<enumeration>POP3ПередSMTP</enumeration>
+		<enumeration>НеЗадано</enumeration>
+	</valueType>
+	<valueType name="EnumRef.Приоритеты" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>Высший</enumeration>
+		<enumeration>Высокий</enumeration>
+		<enumeration>Средний</enumeration>
+		<enumeration>НеУстановлен</enumeration>
+		<enumeration>Низкий</enumeration>
+		<enumeration>Низший</enumeration>
+		<enumeration>НеИзвестен</enumeration>
+		<enumeration>Блокада</enumeration>
+		<enumeration>Авария</enumeration>
+		<enumeration>Неудобство</enumeration>
+		<enumeration>Опечатка</enumeration>
+	</valueType>
+	<valueType name="EnumRef.РолиСотрудников" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>ПолныеПрава</enumeration>
+		<enumeration>Наблюдатель</enumeration>
+		<enumeration>Разработчик</enumeration>
+		<enumeration>ОпытныйРазработчик</enumeration>
+	</valueType>
+	<valueType name="EnumRef.СпособыPOP3Аутентификации" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>APOP</enumeration>
+		<enumeration>CramMD5</enumeration>
+		<enumeration>Обычная</enumeration>
+	</valueType>
+	<valueType name="EnumRef.СпособыSMTPАутентификации" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>CramMD5</enumeration>
+		<enumeration>Login</enumeration>
+		<enumeration>Plain</enumeration>
+		<enumeration>БезАутентификации</enumeration>
+		<enumeration>ПоУмолчанию</enumeration>
+	</valueType>
+	<valueType name="EnumRef.Статус" base="xs:string" variety="Atomic">
+		<enumeration/>
+		<enumeration>Новый</enumeration>
+		<enumeration>ДопИнформация</enumeration>
+		<enumeration>Уточняется</enumeration>
+		<enumeration>КВыполнению</enumeration>
+		<enumeration>ВРаботе</enumeration>
+		<enumeration>Назначен</enumeration>
+		<enumeration>Решен</enumeration>
+		<enumeration>Закрыт</enumeration>
+	</valueType>
+	<objectType name="TableOfTasks">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Исполнитель" type="d3p1:CatalogRef.Сотрудники"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Статус" type="d3p1:EnumRef.Статус"/>
+		<property name="Потрачено" type="xs:decimal"/>
+		<property name="ПланТрудозатрат" type="xs:decimal"/>
+		<property name="ПлановаяДата" type="xs:dateTime"/>
+	</objectType>
+	<objectType name="CatalogObject.ГруппаДел">
+		<property name="IsFolder" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Ref" type="d3p1:CatalogRef.ГруппаДел"/>
+		<property name="DeletionMark" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Parent" type="d3p1:CatalogRef.ГруппаДел"/>
+		<property name="Code" type="xs:string"/>
+		<property name="Description" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="РуководительПроекта" type="d3p1:CatalogRef.Сотрудники" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="ГлавныйИсполнитель" type="d3p1:CatalogRef.Сотрудники" lowerBound="0"/>
+	</objectType>
+	<objectType name="CatalogObject.Дело">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Ref" type="d3p1:CatalogRef.Дело"/>
+		<property name="DeletionMark" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Parent" type="d3p1:CatalogRef.Дело"/>
+		<property name="Code" type="xs:string"/>
+		<property name="Description" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="ГруппаДел" type="d3p1:CatalogRef.ГруппаДел"/>
+		<property name="Описание" type="xs:string"/>
+		<property name="ЭтоВнепроектнаяЗадача" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/core" name="РасширенноеОписание" type="d3p1:ValueStorage"/>
+		<property name="ТекстРасширенноеОписание" type="xs:string"/>
+	</objectType>
+	<objectType name="CatalogObject.ПланРазвития">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Ref" type="d3p1:CatalogRef.ПланРазвития"/>
+		<property name="DeletionMark" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Parent" type="d3p1:CatalogRef.ПланРазвития"/>
+		<property name="Code" type="xs:string"/>
+		<property name="Description" type="xs:string"/>
+		<property name="Порядок" type="xs:decimal"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="СсылкаНаЗадачу" type="d3p1:CatalogRef.Дело"/>
+		<property name="ПланируемыйСрок" type="xs:dateTime"/>
+	</objectType>
+	<objectType name="CatalogObject.ПунктЧекЛиста">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Ref" type="d3p1:CatalogRef.ПунктЧекЛиста"/>
+		<property name="DeletionMark" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Owner" type="d3p1:AnyRef"/>
+		<property name="Description" type="xs:string"/>
+	</objectType>
+	<objectType name="CatalogObject.Сотрудники">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Ref" type="d3p1:CatalogRef.Сотрудники"/>
+		<property name="DeletionMark" type="xs:boolean"/>
+		<property name="Code" type="xs:string"/>
+		<property name="Description" type="xs:string"/>
+		<property name="КодМантис" type="xs:decimal"/>
+	</objectType>
+	<objectType name="CatalogObject.УчетныеЗаписиЭлектроннойПочты">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Ref" type="d3p1:CatalogRef.УчетныеЗаписиЭлектроннойПочты"/>
+		<property name="DeletionMark" type="xs:boolean"/>
+		<property name="Description" type="xs:string"/>
+		<property name="ИмяПользователя" type="xs:string"/>
+		<property name="АдресЭлектроннойПочты" type="xs:string"/>
+		<property name="SMTPСервер" type="xs:string"/>
+		<property name="POP3Сервер" type="xs:string"/>
+		<property name="ПортSMTP" type="xs:decimal"/>
+		<property name="ПортPOP3" type="xs:decimal"/>
+		<property name="Пользователь" type="xs:string"/>
+		<property name="Пароль" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="SMTPАутентификация" type="d3p1:EnumRef.ВариантыSMTPАутентификации"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="СпособSMTPАутентификации" type="d3p1:EnumRef.СпособыSMTPАутентификации"/>
+		<property name="ПользовательSMTP" type="xs:string"/>
+		<property name="ПарольSMTP" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="СпособPOP3Аутентификации" type="d3p1:EnumRef.СпособыPOP3Аутентификации"/>
+		<property name="ВремяОжидания" type="xs:decimal"/>
+		<property name="ОставлятьКопииСообщенийНаСервере" type="xs:boolean"/>
+		<property name="ПериодХраненияСообщенийНаСервере" type="xs:decimal"/>
+		<property name="ИспользоватьДляОтправки" type="xs:boolean"/>
+		<property name="ИспользоватьДляПолучения" type="xs:boolean"/>
+		<property name="ВПредставлениеВключатьИмяПользователя" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="ОтветственныйЗаОбработкуПисем" type="d3p1:CatalogRef.Сотрудники"/>
+	</objectType>
+	<objectType name="CatalogObject.ШаблоныЧекЛистов">
+		<property name="IsFolder" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Ref" type="d3p1:CatalogRef.ШаблоныЧекЛистов"/>
+		<property name="DeletionMark" type="xs:boolean"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Parent" type="d3p1:CatalogRef.ШаблоныЧекЛистов"/>
+		<property name="Description" type="xs:string"/>
+		<property name="Описание" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Задачи" type="d3p1:CatalogTabularSectionRow.ШаблоныЧекЛистов.Задачи" lowerBound="0" upperBound="99999"/>
+	</objectType>
+	<objectType name="CatalogTabularSectionRow.ШаблоныЧекЛистов.Задачи">
+		<property name="Порядок" type="xs:decimal"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Задача" type="d3p1:CatalogRef.ПунктЧекЛиста"/>
+	</objectType>
+	<objectType name="ConstantValueManager.КомандаPutty">
+		<property name="Value" type="xs:string"/>
+	</objectType>
+	<objectType name="ConstantValueManager.Отладка">
+		<property name="Value" type="xs:boolean"/>
+	</objectType>
+	<objectType name="ConstantValueManager.ПроектРазвития">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Value" type="d3p1:CatalogRef.ГруппаДел"/>
+	</objectType>
+	<objectType name="ConstantValueManager.РезервноеВремя">
+		<property name="Value" type="xs:decimal"/>
+	</objectType>
+	<objectType name="DocumentObject.Письмо">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Ref" type="d3p1:DocumentRef.Письмо"/>
+		<property name="DeletionMark" type="xs:boolean"/>
+		<property name="Date" type="xs:dateTime"/>
+		<property name="Number" type="xs:string"/>
+		<property name="Posted" type="xs:boolean"/>
+		<property name="Кому" type="xs:string"/>
+		<property name="Тема" type="xs:string"/>
+		<property name="Текст" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Автор" type="d3p1:CatalogRef.Сотрудники"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Ответственный" type="d3p1:CatalogRef.Сотрудники"/>
+		<property name="Комментарий" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="УчетнаяЗапись" type="d3p1:CatalogRef.УчетныеЗаписиЭлектроннойПочты"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.БуферПочтыДляОтправки">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Письмо" type="d3p1:DocumentRef.Письмо"/>
+		<property name="ДатаОшибки" type="xs:dateTime"/>
+		<property name="Ошибка" type="xs:string"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.ГолосаДел">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Голос" type="d3p1:CatalogRef.Сотрудники"/>
+		<property name="ПлановаяДата" type="xs:dateTime"/>
+		<property name="СистемныйПриоритет" type="xs:decimal"/>
+		<property name="КрайнийСрок" type="xs:dateTime"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.ГруппыЗадачРазвития">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="ГруппаРазвития" type="d3p1:CatalogRef.ГруппаДел"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.ДатыЗадач">
+		<property name="Period" type="xs:dateTime"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Сотрудник" type="d3p1:CatalogRef.Сотрудники"/>
+		<property name="ПланТрудозатрат" type="xs:decimal"/>
+		<property name="ПлановаяДата" type="xs:dateTime"/>
+		<property name="ДатаНачала" type="xs:dateTime"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.Дела">
+		<property name="День" type="xs:dateTime"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Сотрудник" type="d3p1:CatalogRef.Сотрудники"/>
+		<property name="Старт" type="xs:dateTime"/>
+		<property name="Завершение" type="xs:dateTime"/>
+		<property name="Комментарий" type="xs:string"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.ЖесткиеДатыЗадач">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Сотрудник" type="d3p1:CatalogRef.Сотрудники"/>
+		<property name="Трудозатраты" type="xs:decimal"/>
+		<property name="КрайнийСрок" type="xs:dateTime"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.ЗадачиКВыполнению">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Приоритет" type="d3p1:EnumRef.Приоритеты"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Исполнитель" type="d3p1:CatalogRef.Сотрудники"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Контроллер" type="d3p1:CatalogRef.Сотрудники"/>
+		<property name="ДатаДобавления" type="xs:dateTime"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Статус" type="d3p1:EnumRef.Статус"/>
+		<property name="СистемныйПриоритет" type="xs:decimal"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.ЗадачиКПожеланию">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Статус" type="d3p1:EnumRef.Статус"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Автор" type="d3p1:CatalogRef.Сотрудники"/>
+		<property name="ДатаДобавления" type="xs:dateTime"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.ЗадачиРазвития">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело"/>
+		<property name="СистемныйПриоритет" type="xs:decimal"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.ИсторияИзменений">
+		<property name="Period" type="xs:dateTime"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Сотрудник" type="d3p1:CatalogRef.Сотрудники"/>
+		<property name="ОписаниеИзменения" type="xs:string"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.КомментыДел">
+		<property name="Period" type="xs:dateTime"/>
+		<property name="Дело" type="xs:anyType" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Автор" type="d3p1:CatalogRef.Сотрудники"/>
+		<property name="КодМантиса" type="xs:decimal"/>
+		<property name="Комментарий" type="xs:string"/>
+		<property name="ДатаПоследнегоИзменения" type="xs:dateTime"/>
+		<property name="КомментарийHTML" type="xs:string"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.МантисЗадачи">
+		<property name="КодМантиса" type="xs:decimal"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.МантисПроекты">
+		<property name="КодМантиса" type="xs:string"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Проект" type="d3p1:CatalogRef.ГруппаДел"/>
+		<property name="ДатаПоследнегоОбновления" type="xs:dateTime"/>
+		<property name="Отключить" type="xs:boolean"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.ОтладкаМантиса">
+		<property name="КодПроекта" type="xs:decimal"/>
+		<property name="КодЗадачи" type="xs:decimal"/>
+		<property name="НазваниеЗадачи" type="xs:string"/>
+		<property name="Критичность" type="xs:decimal"/>
+		<property name="Статус" type="xs:decimal"/>
+		<property name="ДатаДобавления" type="xs:dateTime"/>
+		<property name="Инфо" type="xs:string"/>
+		<property name="Коммент" type="xs:string"/>
+		<property name="ДатаКоммент" type="xs:dateTime"/>
+		<property name="КодКоммента" type="xs:decimal"/>
+		<property name="ПоследнееИзмКоммент" type="xs:dateTime"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.ПланДел">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Сотрудник" type="d3p1:CatalogRef.Сотрудники"/>
+		<property name="Дата" type="xs:dateTime"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело"/>
+		<property name="Старт" type="xs:dateTime"/>
+		<property name="Завершение" type="xs:dateTime"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.ПрофилиПользователей">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Сотрудник" type="d3p1:CatalogRef.Сотрудники"/>
+		<property name="Емайл" type="xs:string"/>
+		<property name="ОтправлятьПлан" type="xs:boolean"/>
+		<property name="ОтправлятьФакт" type="xs:boolean"/>
+	</objectType>
+	<objectType name="InformationRegisterRecord.ЧекЛист">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Ссылка" type="d3p1:CatalogRef.Дело"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Пункт" type="d3p1:CatalogRef.ПунктЧекЛиста"/>
+		<property name="Выполнено" type="xs:boolean"/>
+		<property name="Порядок" type="xs:decimal"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.БуферПочтыДляОтправки">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Письмо" type="d3p1:DocumentRef.Письмо" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.ГолосаДел">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Голос" type="d3p1:CatalogRef.Сотрудники" lowerBound="0"/>
+		<property name="ПлановаяДата" type="xs:dateTime" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.ГруппыЗадачРазвития">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="ГруппаРазвития" type="d3p1:CatalogRef.ГруппаДел" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.ДатыЗадач">
+		<property name="Period" type="xs:dateTime" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Сотрудник" type="d3p1:CatalogRef.Сотрудники" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.Дела">
+		<property name="День" type="xs:dateTime" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Сотрудник" type="d3p1:CatalogRef.Сотрудники" lowerBound="0"/>
+		<property name="Старт" type="xs:dateTime" lowerBound="0"/>
+		<property name="Завершение" type="xs:dateTime" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.ЖесткиеДатыЗадач">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Сотрудник" type="d3p1:CatalogRef.Сотрудники" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.ЗадачиКВыполнению">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.ЗадачиКПожеланию">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.ЗадачиРазвития">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.ИсторияИзменений">
+		<property name="Period" type="xs:dateTime" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Сотрудник" type="d3p1:CatalogRef.Сотрудники" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.КомментыДел">
+		<property name="Period" type="xs:dateTime" lowerBound="0"/>
+		<property name="Дело" type="xs:anyType" lowerBound="0" nillable="true"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Автор" type="d3p1:CatalogRef.Сотрудники" lowerBound="0"/>
+		<property name="КодМантиса" type="xs:decimal" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.МантисЗадачи">
+		<property name="КодМантиса" type="xs:decimal" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.МантисПроекты">
+		<property name="КодМантиса" type="xs:string" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Проект" type="d3p1:CatalogRef.ГруппаДел" lowerBound="0"/>
+		<property name="ДатаПоследнегоОбновления" type="xs:dateTime" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.ОтладкаМантиса">
+		<property name="КодПроекта" type="xs:decimal" lowerBound="0"/>
+		<property name="КодЗадачи" type="xs:decimal" lowerBound="0"/>
+		<property name="НазваниеЗадачи" type="xs:string" lowerBound="0"/>
+		<property name="Критичность" type="xs:decimal" lowerBound="0"/>
+		<property name="Статус" type="xs:decimal" lowerBound="0"/>
+		<property name="ДатаДобавления" type="xs:dateTime" lowerBound="0"/>
+		<property name="Инфо" type="xs:string" lowerBound="0"/>
+		<property name="Коммент" type="xs:string" lowerBound="0"/>
+		<property name="ДатаКоммент" type="xs:dateTime" lowerBound="0"/>
+		<property name="КодКоммента" type="xs:decimal" lowerBound="0"/>
+		<property name="ПоследнееИзмКоммент" type="xs:dateTime" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.ПланДел">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Сотрудник" type="d3p1:CatalogRef.Сотрудники" lowerBound="0"/>
+		<property name="Дата" type="xs:dateTime" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Дело" type="d3p1:CatalogRef.Дело" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.ПрофилиПользователей">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Сотрудник" type="d3p1:CatalogRef.Сотрудники" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordKey.ЧекЛист">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Ссылка" type="d3p1:CatalogRef.Дело" lowerBound="0"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Пункт" type="d3p1:CatalogRef.ПунктЧекЛиста" lowerBound="0"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.БуферПочтыДляОтправки">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.БуферПочтыДляОтправки" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.ГолосаДел">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.ГолосаДел" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.ГруппыЗадачРазвития">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.ГруппыЗадачРазвития" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.ДатыЗадач">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.ДатыЗадач" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.Дела">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.Дела" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.ЖесткиеДатыЗадач">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.ЖесткиеДатыЗадач" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.ЗадачиКВыполнению">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.ЗадачиКВыполнению" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.ЗадачиКПожеланию">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.ЗадачиКПожеланию" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.ЗадачиРазвития">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.ЗадачиРазвития" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.ИсторияИзменений">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.ИсторияИзменений" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.КомментыДел">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.КомментыДел" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.МантисЗадачи">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.МантисЗадачи" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.МантисПроекты">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.МантисПроекты" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.ОтладкаМантиса">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.ОтладкаМантиса" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.ПланДел">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.ПланДел" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.ПрофилиПользователей">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.ПрофилиПользователей" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+	<objectType name="InformationRegisterRecordSet.ЧекЛист">
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise" name="Filter" type="d3p1:Filter"/>
+		<property xmlns:d3p1="http://v8.1c.ru/8.1/data/enterprise/current-config" name="Record" type="d3p1:InformationRegisterRecord.ЧекЛист" lowerBound="0" upperBound="999999999"/>
+	</objectType>
+</package>

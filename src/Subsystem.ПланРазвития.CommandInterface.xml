@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CommandInterface xmlns="http://v8.1c.ru/8.3/xcf/extrnprops" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<CommandsVisibility>
+		<Command name="InformationRegister.ГруппыЗадачРазвития.StandardCommand.OpenList">
+			<Visibility>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.Разработчик">false</xr:Value>
+				<xr:Value name="Role.Наблюдатель">false</xr:Value>
+				<xr:Value name="Role.ОпытныйРазработчик">false</xr:Value>
+				<xr:Value name="Role.РаботаСРазвитием">false</xr:Value>
+			</Visibility>
+		</Command>
+		<Command name="InformationRegister.ЗадачиРазвития.StandardCommand.OpenList">
+			<Visibility>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ОпытныйРазработчик">false</xr:Value>
+				<xr:Value name="Role.Наблюдатель">false</xr:Value>
+				<xr:Value name="Role.Разработчик">false</xr:Value>
+				<xr:Value name="Role.РаботаСРазвитием">false</xr:Value>
+			</Visibility>
+		</Command>
+		<Command name="InformationRegister.ЗадачиКПожеланию.StandardCommand.OpenList">
+			<Visibility>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ОпытныйРазработчик">false</xr:Value>
+				<xr:Value name="Role.Наблюдатель">false</xr:Value>
+				<xr:Value name="Role.Разработчик">false</xr:Value>
+				<xr:Value name="Role.РаботаСРазвитием">false</xr:Value>
+			</Visibility>
+		</Command>
+	</CommandsVisibility>
+	<SubsystemsOrder>
+		<Subsystem>Subsystem.ПланРазвития.Subsystem.Пожелания</Subsystem>
+	</SubsystemsOrder>
+</CommandInterface>

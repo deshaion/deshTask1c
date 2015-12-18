@@ -1,0 +1,976 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Пожелания к улучшению</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Wishes to improve</v8:content>
+		</v8:item>
+	</Title>
+	<Width>30</Width>
+	<AutoTitle>false</AutoTitle>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПоискаИКоманд" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа поиска и команд</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа поиска и команд</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПоискаИКомандExtendedTooltip" id="61"/>
+			<ChildItems>
+				<PictureDecoration name="Декорация2" id="52">
+					<Width>2</Width>
+					<Height>1</Height>
+					<Picture>
+						<xr:Ref>StdPicture.Find</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="Декорация2КонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="Декорация2ExtendedTooltip" id="62"/>
+				</PictureDecoration>
+				<InputField name="СтрокаПоиска" id="2">
+					<DataPath>СтрокаПоиска</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="3"/>
+					<ExtendedTooltip name="СтрокаПоискаExtendedTooltip" id="63"/>
+					<Events>
+						<Event name="OnChange">СтрокаПоискаПриИзменении</Event>
+						<Event name="AutoComplete">СтрокаПоискаАвтоПодбор</Event>
+					</Events>
+				</InputField>
+				<CommandBar name="Группа1" id="4">
+					<ExtendedTooltip name="Группа1ExtendedTooltip" id="64"/>
+					<ChildItems>
+						<Button name="ПоказатьКомментарии" id="5">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.ПоказатьКомментарии</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="ПоказатьКомментарииExtendedTooltip" id="65"/>
+						</Button>
+						<Button name="ДобавитьПожелание" id="6">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.ОтобразитьПанельДобавления</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="ДобавитьПожеланиеExtendedTooltip" id="66"/>
+						</Button>
+						<Button name="НастройкаСписка" id="50">
+							<Type>CommandBarButton</Type>
+							<OnlyInAllActions>true</OnlyInAllActions>
+							<CommandName>Form.Item.Список.StandardCommand.ListSettings</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="НастройкаСпискаExtendedTooltip" id="67"/>
+						</Button>
+						<Button name="ВывестиСписок" id="51">
+							<Type>CommandBarButton</Type>
+							<OnlyInAllActions>true</OnlyInAllActions>
+							<CommandName>Form.Item.Список.StandardCommand.OutputList</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="ВывестиСписокExtendedTooltip" id="68"/>
+						</Button>
+						<Button name="Справка" id="54">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.StandardCommand.Help</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="СправкаExtendedTooltip" id="69"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ПанельДобавленияПожелания" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Панель добавления пожелания</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Панель добавления пожелания</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ПанельДобавленияПожеланияExtendedTooltip" id="70"/>
+			<ChildItems>
+				<InputField name="ДобавляемоеПожелание" id="8">
+					<DataPath>ДобавляемоеПожелание</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Введите в это поле текст пожелания</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Height>4</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="ДобавляемоеПожеланиеКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ДобавляемоеПожеланиеExtendedTooltip" id="71"/>
+					<Events>
+						<Event name="OnChange">ДобавляемоеПожеланиеПриИзменении</Event>
+						<Event name="AutoComplete">ДобавляемоеПожеланиеАвтоПодбор</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="Группа2" id="35">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа2ExtendedTooltip" id="72"/>
+					<ChildItems>
+						<InputField name="ПолеОценки" id="36">
+							<DataPath>ПолеОценки</DataPath>
+							<ContextMenu name="ПолеОценкиКонтекстноеМеню" id="37"/>
+							<ExtendedTooltip name="ПолеОценкиExtendedTooltip" id="73"/>
+							<Events>
+								<Event name="OnChange">ПолеОценкиПриИзменении</Event>
+								<Event name="AutoComplete">ПолеОценкиАвтоПодбор</Event>
+							</Events>
+						</InputField>
+						<Button name="ЗаписатьПожелание" id="10">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ДобавитьПожелание</CommandName>
+							<Parameter xsi:nil="true"/>
+							<ExtendedTooltip name="ЗаписатьПожеланиеExtendedTooltip" id="74"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСписокИКомментарии" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа список и комментарии</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа список и комментарии</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСписокИКомментарииExtendedTooltip" id="75"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаСписка" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа списка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа списка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСпискаExtendedTooltip" id="76"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОписанияУстановленияОтбора" id="13">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа описания установления отбора</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа описания установления отбора</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОписанияУстановленияОтбораExtendedTooltip" id="77"/>
+							<ChildItems>
+								<PictureDecoration name="Декорация1" id="14">
+									<Width>2</Width>
+									<Height>1</Height>
+									<Picture>
+										<xr:Ref>CommonPicture.Осталось</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="Декорация1КонтекстноеМеню" id="15"/>
+									<ExtendedTooltip name="Декорация1ExtendedTooltip" id="78"/>
+								</PictureDecoration>
+								<LabelDecoration name="ОписаниеОтбора" id="16">
+									<HorizontalStretch>true</HorizontalStretch>
+									<TextColor>web:Blue</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>На список наложен отбор. Выведены не все пожелания.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ОписаниеОтбораКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="ОписаниеОтбораExtendedTooltip" id="79"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="Список" id="18">
+							<Representation>List</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<DefaultItem>true</DefaultItem>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<SelectionMode>SingleRow</SelectionMode>
+							<InitialTreeView>ExpandTopLevel</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>Список</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Create</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Choose</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<AutoRefresh>true</AutoRefresh>
+							<AutoRefreshPeriod>180</AutoRefreshPeriod>
+							<Period xsi:type="v8:StandardPeriod">
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<ContextMenu name="СписокКонтекстноеМеню" id="19">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="СписокКонтекстноеМенюОткрытьЗадачу" id="59">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОткрытьЗадачу</CommandName>
+										<Parameter xsi:nil="true"/>
+										<ExtendedTooltip name="СписокКонтекстноеМенюОткрытьЗадачуExtendedTooltip" id="80"/>
+									</Button>
+									<ButtonGroup name="СписокКонтекстноеМенюГруппа1" id="60">
+										<ExtendedTooltip name="СписокКонтекстноеМенюГруппа1ExtendedTooltip" id="81"/>
+										<ChildItems>
+											<Button name="СписокКонтекстноеМенюДобавитьВПланРазвития" id="56">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ДобавитьВПланРазвития</CommandName>
+												<Parameter xsi:nil="true"/>
+												<ExtendedTooltip name="СписокКонтекстноеМенюДобавитьВПланРазвитияExtendedTooltip" id="82"/>
+											</Button>
+											<Button name="СписокКонтекстноеМенюОтклонитьПожелание" id="57">
+												<Type>CommandBarButton</Type>
+												<UserVisible>
+													<xr:Common>true</xr:Common>
+													<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+													<xr:Value name="Role.Разработчик">false</xr:Value>
+													<xr:Value name="Role.Наблюдатель">false</xr:Value>
+													<xr:Value name="Role.ОпытныйРазработчик">false</xr:Value>
+												</UserVisible>
+												<CommandName>Form.Command.ОтклонитьПожелание</CommandName>
+												<Parameter xsi:nil="true"/>
+												<ExtendedTooltip name="СписокКонтекстноеМенюОтклонитьПожеланиеExtendedTooltip" id="83"/>
+											</Button>
+											<Button name="СписокКонтекстноеМенюПеренестиКВыполнению" id="55">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ПеренестиКВыполнению</CommandName>
+												<Parameter xsi:nil="true"/>
+												<ExtendedTooltip name="СписокКонтекстноеМенюПеренестиКВыполнениюExtendedTooltip" id="84"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="СписокКонтекстноеМенюОбновить" id="58">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Список.StandardCommand.Refresh</CommandName>
+										<Parameter xsi:nil="true"/>
+										<ExtendedTooltip name="СписокКонтекстноеМенюОбновитьExtendedTooltip" id="85"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="СписокКоманднаяПанель" id="20">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокExtendedTooltip" id="86"/>
+							<SearchStringAddition name="СписокSearchString" id="87">
+								<Source>
+									<lf:elementId>18</lf:elementId>
+									<lf:additionId>0</lf:additionId>
+								</Source>
+								<ContextMenu name="СписокSearchStringContextMenu" id="88"/>
+								<ExtendedTooltip name="СписокSearchStringExtendedTooltip" id="89"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокViewStatus" id="90">
+								<Source>
+									<lf:elementId>18</lf:elementId>
+									<lf:additionId>1</lf:additionId>
+								</Source>
+								<ContextMenu name="СписокViewStatusContextMenu" id="91"/>
+								<ExtendedTooltip name="СписокViewStatusExtendedTooltip" id="92"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокSearchControl" id="93">
+								<Source>
+									<lf:elementId>18</lf:elementId>
+									<lf:additionId>2</lf:additionId>
+								</Source>
+								<ContextMenu name="СписокSearchControlContextMenu" id="94"/>
+								<ExtendedTooltip name="СписокSearchControlExtendedTooltip" id="95"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СписокВыбор</Event>
+								<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<ColumnGroup name="Группа3" id="46">
+									<HorizontalStretch>true</HorizontalStretch>
+									<ExtendedTooltip name="Группа3ExtendedTooltip" id="96"/>
+									<ChildItems>
+										<LabelField name="ТекстПожелания" id="33">
+											<DataPath>Список.ТекстПожелания</DataPath>
+											<UserVisible>
+												<xr:Common>true</xr:Common>
+												<xr:Value name="Role.Наблюдатель">true</xr:Value>
+												<xr:Value name="Role.РаботаСРазвитием">true</xr:Value>
+											</UserVisible>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пожелания к улучшению</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Wishes to improve</v8:content>
+												</v8:item>
+											</Title>
+											<TitleFont ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+											<AutoCellHeight>true</AutoCellHeight>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ContextMenu name="ТекстПожеланияКонтекстноеМеню" id="34"/>
+											<ExtendedTooltip name="ТекстПожеланияExtendedTooltip" id="97"/>
+										</LabelField>
+										<ColumnGroup name="Группа4" id="47">
+											<Width>4</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<Group>Horizontal</Group>
+											<ExtendedTooltip name="Группа4ExtendedTooltip" id="98"/>
+											<ChildItems>
+												<LabelField name="ДатаДобавления" id="40">
+													<DataPath>Список.ДатаДобавления</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>7</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<Format>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>ДФ=dd/MM/yy</v8:content>
+														</v8:item>
+													</Format>
+													<ContextMenu name="ДатаДобавленияКонтекстноеМеню" id="41"/>
+													<ExtendedTooltip name="ДатаДобавленияExtendedTooltip" id="99"/>
+												</LabelField>
+												<LabelField name="ЗаголовокПланТрудозатрат" id="48">
+													<DataPath>Список.ЗаголовокПланТрудозатрат</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>13</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="ЗаголовокПланТрудозатратКонтекстноеМеню" id="49"/>
+													<ExtendedTooltip name="ЗаголовокПланТрудозатратExtendedTooltip" id="100"/>
+												</LabelField>
+												<LabelField name="ПланТрудозатрат" id="38">
+													<DataPath>Список.ПланТрудозатрат</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<HorizontalAlign>Left</HorizontalAlign>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>4</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<Format>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Оценка: ЧЦ=4; ЧДЦ=0</v8:content>
+														</v8:item>
+													</Format>
+													<ContextMenu name="ПланТрудозатратКонтекстноеМеню" id="39"/>
+													<ExtendedTooltip name="ПланТрудозатратExtendedTooltip" id="101"/>
+												</LabelField>
+												<PictureField name="ДобавитьГолос" id="44">
+													<DataPath>Список.ДобавитьГолос</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>1</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ValuesPicture>
+														<xr:Ref>StdPicture.AddToFavorites</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</ValuesPicture>
+													<ContextMenu name="ДобавитьГолосКонтекстноеМеню" id="45"/>
+													<ExtendedTooltip name="ДобавитьГолосExtendedTooltip" id="102"/>
+												</PictureField>
+												<LabelField name="КоличествоГолосов" id="42">
+													<DataPath>Список.КоличествоГолосов</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<HorizontalAlign>Left</HorizontalAlign>
+													<ShowInHeader>false</ShowInHeader>
+													<HorizontalStretch>false</HorizontalStretch>
+													<Format>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>ЧЦ=4</v8:content>
+														</v8:item>
+													</Format>
+													<ContextMenu name="КоличествоГолосовКонтекстноеМеню" id="43"/>
+													<ExtendedTooltip name="КоличествоГолосовExtendedTooltip" id="103"/>
+												</LabelField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ИсторияСобытий" id="23">
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>История событий</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>История событий</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>20</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ИсторияСобытийExtendedTooltip" id="104"/>
+					<ChildItems>
+						<HTMLDocumentField name="ПолеИстории" id="24">
+							<DataPath>ПолеИстории</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>1</Width>
+							<Height>6</Height>
+							<ContextMenu name="ПолеИсторииКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="ПолеИсторииExtendedTooltip" id="105"/>
+						</HTMLDocumentField>
+						<LabelDecoration name="СсылкаДобавитьКомментарий" id="26">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Оставить комментарий</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="СсылкаДобавитьКомментарийКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="СсылкаДобавитьКомментарийExtendedTooltip" id="106"/>
+							<Events>
+								<Event name="Click">СсылкаДобавитьКомментарийНажатие</Event>
+							</Events>
+						</LabelDecoration>
+						<UsualGroup name="ПанельДобавленияКомментария" id="28">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Панель добавления комментария</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Панель добавления комментария</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ПанельДобавленияКомментарияExtendedTooltip" id="107"/>
+							<ChildItems>
+								<InputField name="ПолеКомментария" id="29">
+									<DataPath>ПолеКомментария</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Введите в это поле комментарий к изменению статуса</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Height>4</Height>
+									<VerticalStretch>false</VerticalStretch>
+									<MultiLine>true</MultiLine>
+									<ContextMenu name="ПолеКомментарияКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="ПолеКомментарияExtendedTooltip" id="108"/>
+									<Events>
+										<Event name="OnChange">ПолеКомментарияПриИзменении</Event>
+										<Event name="AutoComplete">ПолеКомментарияАвтоПодбор</Event>
+									</Events>
+								</InputField>
+								<CommandBar name="Группа6" id="31">
+									<Width>3</Width>
+									<Height>4</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ExtendedTooltip name="Группа6ExtendedTooltip" id="109"/>
+									<ChildItems>
+										<Button name="ДобавитьКомментарий" id="32">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ДобавитьКомментарий</CommandName>
+											<Parameter xsi:nil="true"/>
+											<ExtendedTooltip name="ДобавитьКомментарийExtendedTooltip" id="110"/>
+										</Button>
+									</ChildItems>
+								</CommandBar>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.Пожелания</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Список" id="2">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<View>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.РаботаСРазвитием">true</xr:Value>
+			</View>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.Автор</Field>
+				<Field>Список.Дело</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	Пожелания.Дело,
+	Пожелания.Статус,
+	Пожелания.Автор,
+	Пожелания.ДатаДобавления,
+	ОценкаПожеланий.ПланТрудозатрат,
+	Пожелания.Дело.Наименование + &amp;СимволПС 
+	+ "  * " + Пожелания.Автор.Наименование КАК ТекстПожелания,
+	ГолосаДел.Количество КАК КоличествоГолосов,
+	"Плановая оценка:" КАК ЗаголовокПланТрудозатрат,
+	0 КАК ДобавитьГолос
+ИЗ
+	РегистрСведений.ЗадачиКПожеланию КАК Пожелания
+ЛЕВОЕ СОЕДИНЕНИЕ 
+	РегистрСведений.ДатыЗадач.СрезПоследних КАК ОценкаПожеланий
+ПО 
+	Пожелания.Дело = ОценкаПожеланий.Дело
+ЛЕВОЕ СОЕДИНЕНИЕ 
+	(ВЫБРАТЬ
+		ГолосаДел.Дело,
+		КОЛИЧЕСТВО(ГолосаДел.Голос) КАК Количество
+	ИЗ
+		РегистрСведений.ГолосаДел КАК ГолосаДел
+	СГРУППИРОВАТЬ ПО
+		ГолосаДел.Дело
+	) КАК ГолосаДел
+ПО 
+	Пожелания.Дело = ГолосаДел.Дело
+</QueryText>
+				<MainTable>InformationRegister.ЗадачиКПожеланию</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаДобавления</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>ТекстПожелания</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.Статус.Новый</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>BackColor</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#D6D8FF</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>ТекстПожелания</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.Статус.Решен</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>BackColor</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#EAFF9D</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>ТекстПожелания</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.Статус.ВРаботе</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>BackColor</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">web:LightGoldenRodYellow</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>ТекстПожелания</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.Статус.Уточняется</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>BackColor</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#FFD7BC</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ДобавляемоеПожелание" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавляемое пожелание</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьКомментарии" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть комментарии</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолеИстории" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поле истории</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолеКомментария" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поле комментария</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СтрокаПоиска" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолеОценки" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оценка (в часах)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>4</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ДобавитьКомментарий" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить комментарий</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СделатьКомментарий</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьКомментарий</Action>
+		</Command>
+		<Command name="ДобавитьПожелание" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить пожелание </v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save a Wish</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать добавленное пожелание</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Record added Wish</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.WriteAndClose</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьПожелание</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ОтобразитьПанельДобавления" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отобразить панель добавления</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отобразить панель добавления пожелания</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтобразитьПанельДобавления</Action>
+		</Command>
+		<Command name="ПоказатьКомментарии" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать комментарии</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать комментарии</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ПоказатьКомментарии</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ПоказатьКомментарии</Action>
+		</Command>
+		<Command name="ПеренестиКВыполнению" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести к выполнению</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести к выполнению</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.Разработчик">false</xr:Value>
+				<xr:Value name="Role.Наблюдатель">false</xr:Value>
+				<xr:Value name="Role.ОпытныйРазработчик">false</xr:Value>
+				<xr:Value name="Role.РаботаСРазвитием">false</xr:Value>
+			</Use>
+			<Action>ПеренестиКВыполнению</Action>
+		</Command>
+		<Command name="ДобавитьВПланРазвития" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить в план развития</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить в план развития</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.Разработчик">false</xr:Value>
+				<xr:Value name="Role.Наблюдатель">false</xr:Value>
+				<xr:Value name="Role.ОпытныйРазработчик">false</xr:Value>
+				<xr:Value name="Role.РаботаСРазвитием">false</xr:Value>
+			</Use>
+			<Action>ДобавитьВПланРазвития</Action>
+		</Command>
+		<Command name="ОтклонитьПожелание" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отклонить пожелание</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отклонить пожелание</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.Разработчик">false</xr:Value>
+				<xr:Value name="Role.Наблюдатель">false</xr:Value>
+				<xr:Value name="Role.ОпытныйРазработчик">false</xr:Value>
+				<xr:Value name="Role.РаботаСРазвитием">false</xr:Value>
+			</Use>
+			<Action>ОтклонитьПожелание</Action>
+		</Command>
+		<Command name="ОткрытьЗадачу" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть задачу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть задачу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОткрытьЗадачу</Action>
+		</Command>
+	</Commands>
+</Form>

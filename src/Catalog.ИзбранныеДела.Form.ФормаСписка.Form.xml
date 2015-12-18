@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаСоздать" id="22">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Item.Список.StandardCommand.Create</CommandName>
+				<Parameter xsi:nil="true"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Добавить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаСоздатьExtendedTooltip" id="24"/>
+			</Button>
+			<ButtonGroup name="ФормаГруппа2" id="23">
+				<ExtendedTooltip name="ФормаГруппа2ExtendedTooltip" id="25"/>
+				<ChildItems>
+					<Button name="ФормаУдалить" id="8">
+						<Type>CommandBarButton</Type>
+						<OnlyInAllActions>true</OnlyInAllActions>
+						<CommandName>Form.StandardCommand.Delete</CommandName>
+						<Parameter xsi:nil="true"/>
+						<ExtendedTooltip name="ФормаУдалитьExtendedTooltip" id="26"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<Button name="ФормаНастройкаСписка" id="18">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.ListSettings</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="ФормаНастройкаСпискаExtendedTooltip" id="27"/>
+			</Button>
+			<ButtonGroup name="ФормаГруппа1" id="21">
+				<ExtendedTooltip name="ФормаГруппа1ExtendedTooltip" id="28"/>
+				<ChildItems>
+					<Button name="ФормаДерево" id="12">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.Tree</CommandName>
+						<Parameter xsi:nil="true"/>
+						<ExtendedTooltip name="ФормаДеревоExtendedTooltip" id="29"/>
+					</Button>
+					<Button name="ФормаИерархическийСписок" id="10">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.HierarchicalList</CommandName>
+						<Parameter xsi:nil="true"/>
+						<ExtendedTooltip name="ФормаИерархическийСписокExtendedTooltip" id="30"/>
+					</Button>
+					<Button name="ФормаСписок" id="11">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.List</CommandName>
+						<Parameter xsi:nil="true"/>
+						<ExtendedTooltip name="ФормаСписокExtendedTooltip" id="31"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<Button name="ФормаСоздатьГруппу" id="6">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CreateFolder</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="ФормаСоздатьГруппуExtendedTooltip" id="32"/>
+			</Button>
+			<Button name="ФормаОбновить" id="9">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Refresh</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="ФормаОбновитьExtendedTooltip" id="33"/>
+			</Button>
+			<Button name="ФормаПеренестиЭлемент" id="13">
+				<Type>CommandBarButton</Type>
+				<OnlyInAllActions>true</OnlyInAllActions>
+				<CommandName>Form.StandardCommand.MoveItem</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="ФормаПеренестиЭлементExtendedTooltip" id="34"/>
+			</Button>
+			<Button name="ФормаУровеньВниз" id="14">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.LevelDown</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="ФормаУровеньВнизExtendedTooltip" id="35"/>
+			</Button>
+			<Button name="ФормаУровеньВверх" id="15">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.LevelUp</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="ФормаУровеньВверхExtendedTooltip" id="36"/>
+			</Button>
+			<Button name="ФормаНайти" id="16">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Find</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="ФормаНайтиExtendedTooltip" id="37"/>
+			</Button>
+			<Button name="ФормаОтменитьПоиск" id="17">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CancelSearch</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="ФормаОтменитьПоискExtendedTooltip" id="38"/>
+			</Button>
+			<Button name="ФормаВывестиСписок" id="19">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.OutputList</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="ФормаВывестиСписокExtendedTooltip" id="39"/>
+			</Button>
+			<Button name="ФормаСправка" id="20">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="ФормаСправкаExtendedTooltip" id="40"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Список" id="1">
+			<Representation>Tree</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<CommandSet>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>ListSettings</ExcludedCommand>
+			</CommandSet>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period xsi:type="v8:StandardPeriod">
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокExtendedTooltip" id="41"/>
+			<SearchStringAddition name="СписокSearchString" id="42">
+				<Source>
+					<lf:elementId>1</lf:elementId>
+					<lf:additionId>0</lf:additionId>
+				</Source>
+				<ContextMenu name="СписокSearchStringContextMenu" id="43"/>
+				<ExtendedTooltip name="СписокSearchStringExtendedTooltip" id="44"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокViewStatus" id="45">
+				<Source>
+					<lf:elementId>1</lf:elementId>
+					<lf:additionId>1</lf:additionId>
+				</Source>
+				<ContextMenu name="СписокViewStatusContextMenu" id="46"/>
+				<ExtendedTooltip name="СписокViewStatusExtendedTooltip" id="47"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокSearchControl" id="48">
+				<Source>
+					<lf:elementId>1</lf:elementId>
+					<lf:additionId>2</lf:additionId>
+				</Source>
+				<ContextMenu name="СписокSearchControlContextMenu" id="49"/>
+				<ExtendedTooltip name="СписокSearchControlExtendedTooltip" id="50"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeAddRow">СписокПередНачаломДобавления</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="Наименование" id="4">
+					<DataPath>Список.Description</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="51"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.ИзбранныеДела</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

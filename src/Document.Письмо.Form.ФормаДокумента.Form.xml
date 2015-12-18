@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ОбщиеРеквизиты" id="57">
+				<Type>CommandBarButton</Type>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.Command.ДополнительныеРеквизиты</CommandName>
+				<Parameter xsi:nil="true"/>
+				<ExtendedTooltip name="ОбщиеРеквизитыExtendedTooltip" id="68"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Тема" id="58">
+			<DataPath>Объект.Тема</DataPath>
+			<ContextMenu name="ТемаКонтекстноеМеню" id="59"/>
+			<ExtendedTooltip name="ТемаExtendedTooltip" id="69"/>
+		</InputField>
+		<InputField name="Кому" id="60">
+			<DataPath>Объект.Кому</DataPath>
+			<ContextMenu name="КомуКонтекстноеМеню" id="61"/>
+			<ExtendedTooltip name="КомуExtendedTooltip" id="70"/>
+		</InputField>
+		<InputField name="Текст" id="62">
+			<DataPath>Объект.Текст</DataPath>
+			<ContextMenu name="ТекстКонтекстноеМеню" id="63"/>
+			<ExtendedTooltip name="ТекстExtendedTooltip" id="71"/>
+		</InputField>
+		<UsualGroup name="Группа1" id="67">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1ExtendedTooltip" id="72"/>
+			<ChildItems>
+				<InputField name="УчетнаяЗапись" id="65">
+					<DataPath>Объект.УчетнаяЗапись</DataPath>
+					<ContextMenu name="УчетнаяЗаписьКонтекстноеМеню" id="66"/>
+					<ExtendedTooltip name="УчетнаяЗаписьExtendedTooltip" id="73"/>
+				</InputField>
+				<Button name="ПослатьПисьмо" id="64">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ПослатьПисьмо</CommandName>
+					<Parameter xsi:nil="true"/>
+					<ExtendedTooltip name="ПослатьПисьмоExtendedTooltip" id="74"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.Письмо</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Подбор" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодборВыполнить</Action>
+		</Command>
+		<Command name="ДополнительныеРеквизиты" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбщиеРеквизиты</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ПослатьПисьмо" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Послать письмо</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Послать письмо</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПослатьПисьмо</Action>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>0</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>0</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>
